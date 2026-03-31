@@ -1,39 +1,37 @@
 import { useEffect } from 'react';
 
+const hasSpeechSynthesis =
+    typeof window !== 'undefined' &&
+    'speechSynthesis' in window &&
+    'SpeechSynthesisUtterance' in window;
+
 const useAIVoice = (text, triggerVoice, onTransition, onComplete) => {
     useEffect(() => {
-        // Function to handle text-to-speech
-        const speak = (text) => {
-            const utterance = new SpeechSynthesisUtterance(text);
+        if (!hasSpeechSynthesis) {
+            return undefined;
+        }
+
+        const speak = (message) => {
+            if (!message) {
+                return;
+            }
+
+            const utterance = new window.SpeechSynthesisUtterance(message);
+            window.speechSynthesis.cancel();
             window.speechSynthesis.speak(utterance);
         };
 
-        // Handle voice triggers for AI personalities
-        const handleVoiceTrigger = () => {
-            if (triggerVoice) {
-                speak(text);
-            }
+        if (triggerVoice) {
+            speak(text);
+        } else if (onTransition) {
+            speak('Transitioning to the next screen!');
+        } else if (onComplete) {
+            speak('Stage completed!');
+        }
+
+        return () => {
+            window.speechSynthesis.cancel();
         };
-
-        // Handle screen transitions
-        const handleScreenTransition = () => {
-            if (onTransition) {
-                speak('Transitioning to the next screen!');
-            }
-        };
-
-        // Handle stage completion messages
-        const handleCompletion = () => {
-            if (onComplete) {
-                speak('Stage completed!');
-            }
-        };
-
-        // Listen for events
-        handleVoiceTrigger();
-        handleScreenTransition();
-        handleCompletion();
-
     }, [text, triggerVoice, onTransition, onComplete]);
 };
 
