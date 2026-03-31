@@ -1,0 +1,1 @@
+export async function sendToAI(prompt){return "AI GENERATED: "+prompt;}

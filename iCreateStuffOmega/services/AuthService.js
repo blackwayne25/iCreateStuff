@@ -1,0 +1,1 @@
+export function checkPassword(pw){return pw==="YourSecret";}

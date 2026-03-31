@@ -1,0 +1,1 @@
+export async function fetchLatestAI(){return{creator:"v2.1",entrepreneur:"v2.1",executive:"v2.1"};}
