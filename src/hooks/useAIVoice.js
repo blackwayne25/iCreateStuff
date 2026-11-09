@@ -17,7 +17,7 @@ const useAIVoice = (text, triggerVoice, onTransition, onComplete) => {
             }
 
             const utterance = new window.SpeechSynthesisUtterance(message);
-            window.speechSynthesis.cancel();
+            // Queue speech without interrupting other speech sources.
             window.speechSynthesis.speak(utterance);
         };
 
@@ -28,10 +28,6 @@ const useAIVoice = (text, triggerVoice, onTransition, onComplete) => {
         } else if (onComplete) {
             speak('Stage completed!');
         }
-
-        return () => {
-            window.speechSynthesis.cancel();
-        };
     }, [text, triggerVoice, onTransition, onComplete]);
 };
 
