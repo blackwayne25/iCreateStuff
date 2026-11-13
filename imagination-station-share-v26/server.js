@@ -11,7 +11,7 @@ function eq(a,b){return a.length===b.length&&crypto.timingSafeEqual(Buffer.from(
 function authorized(req){const v=(req.headers.cookie||"").split(";").map(x=>x.trim()).find(x=>x.startsWith(COOKIE+"="))?.slice(COOKIE.length+1)||"";return eq(v,VALUE);}
 const hits=new Map();
 function rateOK(req){const ip=String(req.headers["x-forwarded-for"]||req.socket.remoteAddress||"").split(",")[0];const hash=crypto.createHash("sha256").update(ip).digest("hex");const now=Date.now();let entry=hits.get(hash)||{window:now,count:0};if(now-entry.window>60000)entry={window:now,count:0};entry.count++;hits.set(hash,entry);if(hits.size>3000)hits.clear();return entry.count<120;}
-http.createServer((req,res)=>{
+http.createServer(async (req,res)=>{
  if(!rateOK(req))return reply(res,429,"Rate limited");
  const loc=new URL(req.url,"http://localhost").pathname;
  if(req.method==="GET"&&loc==="/health")return reply(res,200,JSON.stringify({app:"imagination-station-share-v26",ok:true}),"application/json");
