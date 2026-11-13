@@ -468,7 +468,7 @@ $('vaultRestore').onclick=async()=>{const file=$('vaultImport').files?.[0];if(!f
   const existingCinema=from(cinemaKey,emptyCinema);
   if(mode==='merge'){merged.cinema={schema:1,projects:mergeById(existingCinema.projects||[],d.cinema?.projects||[],20)};}
   else merged.cinema=d.cinema||existingCinema; // Legacy backup should not silently erase newer cinema work.
-  merged.cutroom=mode==='merge'?(window.ISCutRoom?.plan?.()||d.cutroom||null):(d.cutroom||window.ISCutRoom?.plan?.()||null);
+  merged.cutroom=mode==='merge'?(from('is-cinema-cut-room-v34',null)||d.cutroom||null):(d.cutroom||from('is-cinema-cut-room-v34',null)||null);
   validateStudioPayload({format:'imagination-station-backup-v28',schema:1,data:merged});
   const entries=[[KITS,JSON.stringify(merged.projects)],[IDEAS,JSON.stringify(merged.ideas)],[WORK,JSON.stringify(merged.work)],[CANON,JSON.stringify(merged.canon)]];
   if(merged.world&&window.ImaginationWorld?.valid?.(merged.world))entries.push(['is-personal-creator-world-v30',JSON.stringify(merged.world)]);
