@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Imagination Station — Independent Creator Guest Studio v31 · Idea Mutant + Connected Creation</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Imagination Station — Independent Creator Guest Studio v32 · Idea Mutant + Connected Creation</title>
 <style>
 :root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#09101d;color:#eef5ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#26355e,#09101d 67%);min-height:100vh}header,main,footer{max-width:1120px;margin:auto;padding:20px}header{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid #485c7d}h1{font-size:clamp(1.5rem,4vw,2.5rem);margin:.2em 0}h2{font-size:1.25rem}p{line-height:1.55}small,.muted{color:#afc1d5}nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.card{background:#152339;border:1px solid #3d5376;border-radius:16px;padding:20px;margin:12px 0}button,a.action{border:1px solid #768cb1;background:#293d62;color:white;font:inherit;font-weight:650;border-radius:10px;padding:10px 14px;cursor:pointer}button.primary{background:#4763b9;border-color:#88c9f2}button:hover{background:#385781}button[disabled]{opacity:.45;cursor:default}label{display:block;font-weight:650;font-size:.92rem;margin:12px 0 4px}input,select,textarea{font:inherit;display:block;color:#fff;background:#0a1729;border:1px solid #536b94;border-radius:10px;padding:11px;width:100%}textarea{min-height:125px;line-height:1.5} .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.pill{font-size:.76rem;padding:7px 10px;border:1px solid #77aeb3;border-radius:50px;color:#a8edeb}#message{border-left:3px solid #86e3d9;padding:8px 12px;background:#132b3b}.panel[hidden]{display:none!important}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.listItem{display:flex;justify-content:space-between;gap:12px;border:1px solid #45607c;border-radius:10px;padding:10px;margin:8px 0}.listItem button{font-size:.8rem}.fine{font-size:.83rem;color:#b4c8d9}canvas{display:block;width:100%;max-width:440px;aspect-ratio:9/16;background:#090e18;border:1px solid #6080ae;border-radius:10px;margin:auto}section.panel>h2{margin-top:0}footer{font-size:.82rem;color:#afc1d5;border-top:1px solid #31465e}@media(max-width:720px){.grid{grid-template-columns:1fr}header{align-items:start;flex-direction:column}}
 /* Parallel conversation + creator-controlled task engine */
@@ -34,7 +34,7 @@
 @media(prefers-reduced-motion:reduce){.world-gate::before,.gate-ring,.gate-ring::before,.gate-orb{animation:none!important}.world-room{transition:none!important}}
 
 </style></head><body>
-<header><div><div class="muted">SHARE-ONLY WEB STUDIO · INDEPENDENT CREATOR</div><h1>✦ Imagination Station</h1><div class="muted">Guest Studio v31 · Idea Mutant + Connected Creation · Browser-local data, not separate user accounts · No owner content bundled</div></div><span class="pill">$0 API spend</span></header>
+<header><div><div class="muted">SHARE-ONLY WEB STUDIO · INDEPENDENT CREATOR</div><h1>✦ Imagination Station</h1><div class="muted">Guest Studio v32 · Idea Mutant + Connected Creation · Browser-local data, not separate user accounts · No owner content bundled</div></div><span class="pill">$0 API spend</span></header>
 
 <div class="world-hud" id="creatorWorldHud"><span aria-hidden="true">✦</span><strong id="worldHudName">Your creative universe</strong><span id="worldHudCoordinates" class="muted">Portal not configured</span><button class="smallBtn" id="rebuildWorld" type="button">🌌 Rebuild My World</button></div>
 <section class="panel" id="creatorWorldMap" aria-label="My interactive world map">
@@ -58,29 +58,37 @@
  <div class="row"><button id="deviceCheckRun" class="smallBtn">Run device check</button><button id="deviceCheckReport" class="smallBtn">Download safe test results</button></div>
  <p class="fine">A passed storage check does not guarantee a large MP4 will fit. Your Media Vault has a 35 MB per-file limit and can still be erased by browser settings. Use full-studio backups for important work.</p>
 </section>
-<nav aria-label="Creator workspace"><button data-view="ideas" class="primary">✦ Idea Mutant</button><button data-view="create">Commercial + Jingle</button><button data-view="story">Storyboard</button><button data-view="motion">Silent Motion Video</button><button data-view="renderlab">🎥 Production Render Dock</button><button data-view="library">My Projects & Backups</button><button data-view="media">🎞️ MP4 / MP3 Media Deck</button><button data-view="forge">🧬 Character Forge + C5</button><button data-view="vault">🔒 Backup & Recovery</button></nav>
+<nav aria-label="Creator workspace"><button data-view="ideas" class="primary">✦ Idea Mutant</button><button data-view="create">Commercial + Jingle</button><button data-view="story">Storyboard</button><button data-view="motion">Silent Motion Video</button><button data-view="renderlab">🎥 Production Sequence Director</button><button data-view="library">My Projects & Backups</button><button data-view="media">🎞️ MP4 / MP3 Media Deck</button><button data-view="forge">🧬 Character Forge + C5</button><button data-view="vault">🔒 Backup & Recovery</button></nav>
 
 
 <section class="panel" id="production-render-dock" data-panel="renderlab" hidden>
-  <h2>🎥 Production Render Dock · Actual playable video + original music</h2>
-  <p>Turn a <strong>selected Idea Mutant branch</strong> into a 12-second original motion-graphics promo, synchronized with a procedurally composed electronic beat. Runs on your device for $0. Output is <strong>WebM</strong> on most browsers; MP4 only where the browser can genuinely record it. This is moving type and graphics, not AI-animated characters.</p>
-  <div class="grid"><div>
-    <div class="row"><button id="rlUseIdea" class="primary">Use my chosen idea</button><button id="rlOpenIdeas">Choose an idea</button></div>
-    <label for="rlTitle">Creative title</label><input id="rlTitle" maxlength="100" placeholder="Select an idea or write your own title">
-    <label for="rlHook">Opening hook</label><textarea id="rlHook" maxlength="300" placeholder="The twist that stops the scroll…"></textarea>
-    <label for="rlTwist">The story's twist</label><textarea id="rlTwist" maxlength="300" placeholder="What changes at the halfway point?"></textarea>
-    <label for="rlPayoff">Final payoff / call to action</label><textarea id="rlPayoff" maxlength="300" placeholder="How it ends and what to do next"></textarea>
-    <label for="rlFormat">Production format</label><select id="rlFormat"><option value="vertical">9:16 · Vertical (social / phone)</option><option value="wide">16:9 · Widescreen</option></select>
-    <div class="row"><button id="rlPreview">Preview a frame</button><button id="rlCreate" class="primary">Render 12s video + music</button><button id="rlStop" disabled>Stop recording</button></div>
-    <div class="row"><button id="rlSaveVault" disabled>Keep finished video in Media Vault</button><button id="rlPoster">Export poster PNG</button><button id="rlMusic">Export 12s original theme WAV</button><button id="rlPacket">Export C5 production packet</button></div>
-    <p class="fine" id="rlStatus" role="status">Select a concept, then choose Render. Keep the page open while recording. No external uploads or paid AI calls.</p>
-    <p class="fine" id="rlProgress">0 / 12 seconds</p>
-    <div id="rlDownloads" class="row" aria-live="polite"></div>
-  </div><div>
-    <canvas id="rlCanvas" width="360" height="640" style="max-width:100%;max-height:540px;border-radius:16px;border:1px solid #49617e;object-fit:contain;background:#061426" aria-label="Production render preview"></canvas>
-    <video id="rlPlayback" hidden controls playsinline style="width:100%;margin-top:14px;border-radius:14px" aria-label="Finished generated video"></video>
-    <p class="fine">Built-in $0 procedural graphics and synthesized music; the original video and audio downloads stay on your device. Your world palette and approved C5 character details are added to the exported production packet.</p>
-  </div></div>
+ <h2>🎬 Sequence Director V32 · A real video from your own creative brief</h2>
+ <p>Create an original <strong>12-, 24-, 36- or 60-second</strong> motion-graphics film with synchronized synthesized music. Each 12-second scene has four editable 3-second shots, continuity controls and a single finished video download. Works on this device for $0: WebM on most browsers, MP4 only when natively supported. <strong>Not full character animation or generative AI.</strong></p>
+ <div class="grid"><div>
+  <div class="row"><button id="rlUseIdea" class="primary">Use chosen Idea Mutant branch</button><button id="rlOpenIdeas">Choose an idea</button></div>
+  <label for="rlTitle">Project title</label><input id="rlTitle" maxlength="100" placeholder="Create an original idea">
+  <label for="rlHook">Opening hook</label><textarea id="rlHook" maxlength="300" placeholder="The hook that stops the scroll…"></textarea>
+  <label for="rlTwist">Big turn / conflict</label><textarea id="rlTwist" maxlength="300" placeholder="What changes the stakes?"></textarea>
+  <label for="rlPayoff">Ending / call to action</label><textarea id="rlPayoff" maxlength="300" placeholder="How the story resolves…"></textarea>
+  <div class="grid"><div><label for="rlFormat">Aspect ratio</label><select id="rlFormat"><option value="vertical">9:16 · Vertical (phone)</option><option value="wide">16:9 · Widescreen</option></select></div>
+  <div><label for="rlDuration">Finished duration</label><select id="rlDuration"><option value="12">12 seconds · 1 C5 scene</option><option value="24" selected>24 seconds · 2 C5 scenes</option><option value="36">36 seconds · 3 C5 scenes</option><option value="60">60 seconds · 5 C5 scenes</option></select></div></div>
+  <label for="rlBeat">Original music character</label><select id="rlBeat"><option value="pulse">120 BPM · Cosmic Pulse</option><option value="bounce">100 BPM · Neon Bounce</option><option value="dream">90 BPM · Dream Drift</option></select>
+  <div class="row"><button id="rlBuildSequence">Build editable scene map</button><button id="rlPreview">Preview at the playhead</button></div>
+  <label for="rlScenes">C5 sequence editor · one line per 12s scene; use FOUR phrases separated by |</label>
+  <textarea id="rlScenes" rows="6" maxlength="5000" placeholder="Scene 1 title | Shot 2 | Shot 3 | Shot 4&#10;Scene 2 title | Shot 2 | Shot 3 | Shot 4"></textarea>
+  <p class="fine">Your scene map is editable. Export a production master to preserve your exact revisions. The original idea and approved character locks are retained in the JSON packet, not silently changed.</p>
+  <label for="rlScrub">Preview playhead</label><input id="rlScrub" type="range" min="0" max="24" step=".1" value="0" style="width:100%"><span class="fine" id="rlTime">0.0 / 24.0 seconds</span>
+  <div class="row"><button id="rlCreate" class="primary">Render 24s movie + music</button><button id="rlStop" disabled>Stop recording</button><button id="rlSaveVault" disabled>Keep video in Media Vault</button></div>
+  <div class="row"><button id="rlPoster">Download poster PNG</button><button id="rlMusic">Download matching soundtrack WAV</button><button id="rlPacket">Download C5 packet</button><button id="rlMaster">Export editable master</button></div>
+  <label for="rlImportMaster">Restore an editable production master</label><input id="rlImportMaster" type="file" accept="application/json,.json">
+  <p class="fine" id="rlStatus" role="status">Select an idea and build your sequence. Keep the tab open while recording; creation is local and no assets are uploaded.</p>
+  <p class="fine" id="rlProgress">0 / 24 seconds</p>
+  <div id="rlDownloads" class="row" aria-live="polite"></div>
+ </div><div>
+  <canvas id="rlCanvas" width="360" height="640" style="max-width:100%;max-height:540px;border-radius:16px;border:1px solid #49617e;object-fit:contain;background:#061426" aria-label="Production render preview"></canvas>
+  <video id="rlPlayback" hidden controls playsinline style="width:100%;margin-top:14px;border-radius:14px" aria-label="Finished movie"></video>
+  <p class="fine">This is a continuous render: scene boundaries at 12, 24, 36 and 48 seconds preserve the same world palette, camera language and approved C5 references. Runtime depends on device performance. A 60-second clip may be demanding on some phones.</p>
+ </div></div>
 </section>
 <section class="panel" id="character-forge" data-panel="forge" hidden>
  <h2>🧬 Character Forge · Creator-approved C5 canon</h2><p>Build character locks that travel with new storyboards, scripts, QA reports and pitches. You approve each lock. This browser does not generate images or overwrite older canon automatically.</p>
@@ -514,81 +522,96 @@ openGate();
 window.ImaginationWorld=Object.freeze({current:()=>current?{...current}:null,valid});
 })();
 </script><script>
-// v31 Production Render Dock: real local video/audio export; no server inference or asset upload.
+
+// v32 Sequence Director: real local video/audio export; no server inference or asset upload.
 (()=>{'use strict';
 const $=id=>document.getElementById(id);
 const canvas=$('rlCanvas'),g=canvas.getContext('2d');
-let timer=0,recording=null,audio=null,previewURL=null,lastBlob=null;
+let timer=0,recording=null,audio=null,previewURL=null,lastBlob=null,lastRenderedMeta=null;
 const palettes={galaxy:['#071732','#16dace','#6a4aff'],arcade:['#16082f','#fb75fa','#40d6fb'],forge:['#160b0b','#ffb64c','#e85b35'],sound:['#081d1b','#8dffb0','#1dbaaf'],wild:['#261020','#ffa690','#ee509d']};
+const moods={pulse:{bpm:120,notes:[220,261.63,293.66,349.23,293.66,261.63,196,220]},bounce:{bpm:100,notes:[174.61,220,261.63,293.66,220,174.61,164.81,196]},dream:{bpm:90,notes:[164.81,196,246.94,293.66,261.63,220,196,164.81]}};
+const length=()=>Number($('rlDuration').value)||24;
+function generated(c){return [[c.title,c.hook,c.twist,c.payoff],['THE NEXT CHAPTER',c.hook,'THE RULES CHANGE',c.twist],['ONE IMPOSSIBLE CHOICE',c.twist,'THE STAKES ARE HIGHER',c.payoff],['THE WORLD RESPONDS',c.hook,'ONE LAST SURPRISE',c.twist],['THE FINALE',c.twist,c.payoff,'ONE IMAGINATION. ONE STUDIO.']].slice(0,c.duration/12);}
+function formatScenes(s){return s.map(a=>a.map(x=>String(x).replace(/[|\r\n]/g,' ').trim()).join(' | ')).join('\n');}
+function parseScenes(c){const text=$('rlScenes').value.trim();if(!text)return generated(c);const lines=text.split(/\r?\n/).filter(Boolean);if(lines.length!==c.duration/12)throw Error('Expected '+(c.duration/12)+' scenes, one line per 12 seconds');return lines.map((row,i)=>{const parts=row.split('|').map(x=>x.trim());if(parts.length!==4||parts.some(x=>!x||x.length>200))throw Error('Scene '+(i+1)+' needs exactly FOUR nonempty captions separated by | (max 200 characters each).');return parts;});}
+function project(){const c=concept();return {...c,scenes:parseScenes(c)};}
+function updateDuration(reset=true){const c=concept();$('rlScrub').max=c.duration;$('rlCreate').textContent='Render '+c.duration+'s movie + music';$('rlMusic').textContent='Download '+c.duration+'s soundtrack WAV';$('rlProgress').textContent='0 / '+c.duration+' seconds';if(reset)$('rlScenes').value=formatScenes(generated(c));preview();}
+function preview(){try{const c=project(),t=Math.min(c.duration-.01,Math.max(0,Number($('rlScrub').value)||0));draw(t,c);$('rlTime').textContent=t.toFixed(1)+' / '+c.duration.toFixed(1)+' seconds';}catch(e){say(e.message);}}
 const valid=t=>String(t||'').trim().slice(0,300);
 const world=()=>{try{return window.ImaginationWorld?.current?.()||null}catch{return null}};
 const colors=()=>palettes[world()?.realm]||palettes.galaxy;
-const concept=()=>({title:valid($('rlTitle').value)||'THE NEXT BIG IDEA',hook:valid($('rlHook').value)||'Every imagination has a beginning.',twist:valid($('rlTwist').value)||'Then something unexpected happens.',payoff:valid($('rlPayoff').value)||'ONE IMAGINATION. ONE STUDIO.',realm:world()?.realm||'galaxy',creator:world()?.name||'Creator',format:$('rlFormat').value});
+const concept=()=>({title:valid($('rlTitle').value)||'THE NEXT BIG IDEA',hook:valid($('rlHook').value)||'Every imagination has a beginning.',twist:valid($('rlTwist').value)||'Then something unexpected happens.',payoff:valid($('rlPayoff').value)||'ONE IMAGINATION. ONE STUDIO.',realm:world()?.realm||'galaxy',creator:world()?.name||'Creator',format:$('rlFormat').value,duration:length(),mood:$('rlBeat').value});
 function say(t){$('rlStatus').textContent=t;}
 function chosen(){return window.ISGuestBridge?.getSelected?.()||null;}
-function use(){const x=chosen();if(!x){say('No Idea Mutant branch is selected. Write your own concept or choose an idea first.');return false;} $('rlTitle').value=x.title.slice(0,100);$('rlHook').value=(x.hook||x.premise||'').slice(0,300);$('rlTwist').value=(x.premise||'').slice(0,300);$('rlPayoff').value=(x.payoff||'').slice(0,300);say('Chosen Idea Mutant branch loaded into your real video production dock.');draw(0,concept());return true;}
+function use(){const x=chosen();if(!x){say('No Idea Mutant branch is selected. Write your own concept or choose an idea first.');return false;} $('rlTitle').value=x.title.slice(0,100);$('rlHook').value=(x.hook||x.premise||'').slice(0,300);$('rlTwist').value=(x.premise||'').slice(0,300);$('rlPayoff').value=(x.payoff||'').slice(0,300);updateDuration(true);say('Chosen Idea Mutant branch loaded into the C5 scene director.');return true;}
 function rounded(x,y,w,h,r){g.beginPath();g.roundRect(x,y,w,h,r);g.fill();}
 function linewrap(text,x,y,width,size,color,max=3){g.fillStyle=color;g.textAlign='center';g.textBaseline='middle';g.font=`800 ${size}px system-ui, sans-serif`;const words=String(text||'').split(/\s+/);let cur='',lines=[];for(const w of words){const test=cur?cur+' '+w:w;if(g.measureText(test).width>width&&cur){lines.push(cur);cur=w;}else cur=test;}if(cur)lines.push(cur);const chosen=lines.slice(0,max);const step=size*1.3;chosen.forEach((v,i)=>g.fillText(v,x,y+(i-(chosen.length-1)/2)*step));}
 function draw(t,c){const wide=c.format==='wide',w=wide?640:360,h=wide?360:640;if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;}
- const [bg,accent,accent2]=colors(),phase=Math.min(3,Math.floor(Math.max(0,t)/3));
+ const [bg,accent,accent2]=palettes[c.realm]||palettes.galaxy,scene=Math.min(c.scenes.length-1,Math.floor(Math.max(0,t)/12)),phase=Math.min(3,Math.floor(Math.max(0,t-scene*12)/3));
  const grd=g.createLinearGradient(0,0,w,h);grd.addColorStop(0,bg);grd.addColorStop(.55,'#101638');grd.addColorStop(1,bg);g.fillStyle=grd;g.fillRect(0,0,w,h);
  g.save();g.translate(w*.5,h*.45);g.rotate(t*.035);const spread=Math.min(w,h)*.34;const gl=g.createRadialGradient(0,0,0,0,0,spread*1.7);gl.addColorStop(0,accent+'55');gl.addColorStop(.6,accent2+'22');gl.addColorStop(1,'#00000000');g.fillStyle=gl;g.beginPath();g.arc(0,0,spread*1.7,0,Math.PI*2);g.fill();
  for(let i=0;i<9;i++){const r=spread*(.3+i*.15);g.strokeStyle=(i%2?accent2:accent)+(i%2?'4a':'5e');g.lineWidth=i%3===0?3:1;g.beginPath();g.arc(0,0,r,t*.2+i*.4,t*.2+i*.4+Math.PI*1.15);g.stroke();}g.restore();
  for(let i=0;i<35;i++){const x=(i*97+t*(12+i%4))%w,y=(i*43+t*(7+i%6))%h;g.fillStyle=i%3?accent+'65':accent2+'75';g.fillRect(x,y,2+i%3,2+i%3)}
  g.fillStyle='#040919b9';rounded(18,h*.15,w-36,h*.72,20);
  g.strokeStyle=accent+'a6';g.lineWidth=2;g.strokeRect(20,h*.15,w-40,h*.72);
- const slides=[c.title,c.hook,c.twist,c.payoff];const labels=['AN ORIGINAL IMAGINATION','THE HOOK','THE TWIST','THE PAYOFF'];
+ const slides=c.scenes[scene];const labels=['C5 SCENE '+(scene+1)+'/'+c.scenes.length,'THE HOOK','THE TURN','THE PAYOFF'];
  g.fillStyle=accent;g.textAlign='center';g.font=`700 ${Math.round(w*.025)}px system-ui`;g.fillText('IMAGINATION STATION · ORIGINAL PRODUCTION',w/2,h*.07);
  g.fillStyle=accent2;g.font=`700 ${Math.round(w*.030)}px system-ui`;g.fillText(labels[phase],w/2,h*.29);
- const enter=Math.max(.55,Math.min(1,(t%3)*3));g.save();g.globalAlpha=enter;
+ const enter=Math.max(.55,Math.min(1,((t%3)*3)));g.save();g.globalAlpha=enter;
  linewrap(slides[phase],w/2,h*.48,w-95,wide?29:26,'#fff',wide?3:5);g.restore();
  g.textAlign='center';g.font=`600 ${Math.round(w*.026)}px system-ui`;g.fillStyle='#d6e7ff';g.fillText('CREATED IN '+String(c.realm||'STORY GALAXY').toUpperCase()+'  •  C5 / ORIGINAL',w/2,h*.79);
- g.fillStyle=accent;rounded(24,h*.91,Math.max(1,(w-48)*Math.min(1,t/12)),6,3);
+ g.fillStyle=accent;rounded(24,h*.91,Math.max(1,(w-48)*Math.min(1,t/c.duration)),6,3);
  g.fillStyle='#e3f2ff';g.font=`600 ${Math.round(w*.021)}px system-ui`;g.fillText('ONE IMAGINATION • ONE STUDIO',w/2,h*.965);
 }
 function filename(c,suffix){return (c.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').slice(0,30)||'original-idea')+'-'+suffix;}
 function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000)}
 function addLink(blob,name,label){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.textContent=label;a.className='button';a.style.cssText='display:inline-block;padding:9px;border:1px solid #68dad3;border-radius:8px;color:white;text-decoration:none';$('rlDownloads').append(a);return url;}
-function sound(ctx,dest,start,duration=12){const master=ctx.createGain();master.gain.value=.33;master.connect(dest);
+function sound(ctx,dest,start,duration=12,mood='pulse'){const master=ctx.createGain();master.gain.value=.33;master.connect(dest);
  function voice(freq,time,len,amp,type='sine',slide=0){const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type=type;osc.frequency.setValueAtTime(freq,time);if(slide)osc.frequency.exponentialRampToValueAtTime(Math.max(30,slide),time+len);gain.gain.setValueAtTime(.0001,time);gain.gain.exponentialRampToValueAtTime(amp,time+.012);gain.gain.exponentialRampToValueAtTime(.0001,time+len);osc.connect(gain);gain.connect(master);osc.start(time);osc.stop(time+len+.01);}
- const beat=.5;for(let n=0;n<duration/beat;n++){const tm=start+n*beat;if(n%2===0)voice(130,tm,.26,.56,'sine',46);if(n%4===2)voice(180,tm,.12,.17,'triangle',70);voice(2900,tm,.04,.035,'triangle',1800);if(n%2===1)voice(92,tm,.32,.10,'sawtooth',64);}
- const notes=[220,261.63,293.66,349.23,293.66,261.63,196,220];for(let n=0;n<duration;n++){voice(notes[n%notes.length],start+n,.58,.095,'triangle',notes[n%notes.length]*.97);}
+ const beat=60/(moods[mood]||moods.pulse).bpm;for(let n=0;n<duration/beat;n++){const tm=start+n*beat;if(n%2===0)voice(130,tm,.26,.56,'sine',46);if(n%4===2)voice(180,tm,.12,.17,'triangle',70);voice(2900,tm,.04,.035,'triangle',1800);if(n%2===1)voice(92,tm,.32,.10,'sawtooth',64);}
+ const notes=(moods[mood]||moods.pulse).notes;for(let n=0;n<duration/beat;n+=2){let f=notes[Math.floor(n/2)%notes.length];voice(f,start+n*beat,.58,.095,mood==='dream'?'sine':'triangle',f*.97);}
  return master;
 }
 function wav(buffer){const samples=buffer.getChannelData(0),rate=buffer.sampleRate,buf=new ArrayBuffer(44+samples.length*2),dv=new DataView(buf);function txt(offset,str){for(let i=0;i<str.length;i++)dv.setUint8(offset+i,str.charCodeAt(i));}txt(0,'RIFF');dv.setUint32(4,36+samples.length*2,true);txt(8,'WAVE');txt(12,'fmt ');dv.setUint32(16,16,true);dv.setUint16(20,1,true);dv.setUint16(22,1,true);dv.setUint32(24,rate,true);dv.setUint32(28,rate*2,true);dv.setUint16(32,2,true);dv.setUint16(34,16,true);txt(36,'data');dv.setUint32(40,samples.length*2,true);for(let i=0;i<samples.length;i++){const v=Math.max(-1,Math.min(1,samples[i]));dv.setInt16(44+i*2,v<0?v*32768:v*32767,true);}return new Blob([buf],{type:'audio/wav'});}
-function packet(c){let selected=chosen(),canon=[];try{canon=(window.ISGuestCanon?.snapshot?.()||[]).slice(0,10);}catch{}return {project:c.title,origin:selected?.id||null,creator:c.creator,world:c.realm,kind:'original_motion_graphic_proof',duration_seconds:12,format:c.format,rendering:'client-side Canvas + MediaRecorder + WebAudio; not character animation',seconds_per_card:3,c5_sequence:[{seconds:'0-3',text:c.title},{seconds:'3-6',text:c.hook},{seconds:'6-9',text:c.twist},{seconds:'9-12',text:c.payoff}],character_reference:canon,original_music:'procedurally synthesized 120 BPM instrumental',requires_creator_review:true,media_files:'downloaded to this device; not uploaded or cloud synced',version:31};}
+function packet(c){let selected=chosen(),canon=[];try{canon=(window.ISGuestCanon?.snapshot?.()||[]).slice(0,10);}catch{}return {project:c.title,origin:selected?.id||null,creator:c.creator,world:c.realm,kind:'original_editable_motion_graphic',duration_seconds:c.duration,format:c.format,music:{style:c.mood,bpm:(moods[c.mood]||moods.pulse).bpm},c5_sequence:c.scenes.map((shots,i)=>({scene_number:i+1,start_second:12*i,end_second:12*(i+1),c5_locked:true,shots:shots.map((text,j)=>({start_second:12*i+3*j,end_second:12*i+3*(j+1),text}))})),character_reference:canon,requires_creator_review:true,media_files:'downloaded to device; not uploaded or cloud synced',version:32};}
 $('rlUseIdea').onclick=use;
 $('rlOpenIdeas').onclick=()=>document.querySelector('[data-view="ideas"]')?.click();
 $('guestToRender').onclick=()=>{document.querySelector('[data-view="renderlab"]')?.click();use();};
-$('rlSaveVault').onclick=()=>{if(!lastBlob){say('Render a video first.');return;}try{const ext=lastBlob.type.includes('mp4')?'mp4':'webm';const file=new File([lastBlob],filename(concept(),'12sec-promo.'+ext),{type:lastBlob.type});const data=new DataTransfer();data.items.add(file);$('mediaUpload').files=data.files;$('mediaUpload').dispatchEvent(new Event('change',{bubbles:true}));document.querySelector('[data-view="media"]')?.click();$('mediaPin').click();}catch(e){say('Could not transfer this video into the device vault: '+e.message+'. The download remains available.');}};
+$('rlSaveVault').onclick=()=>{if(!lastBlob){say('Render a video first.');return;}try{const ext=lastBlob.type.includes('mp4')?'mp4':'webm';const file=new File([lastBlob],filename(lastRenderedMeta||project(),(lastRenderedMeta?.duration||length())+'sec-promo.'+ext),{type:lastBlob.type});const data=new DataTransfer();data.items.add(file);$('mediaUpload').files=data.files;$('mediaUpload').dispatchEvent(new Event('change',{bubbles:true}));document.querySelector('[data-view="media"]')?.click();$('mediaPin').click();}catch(e){say('Could not transfer this video into the device vault: '+e.message+'. The download remains available.');}};
 
-$('rlFormat').onchange=()=>draw(0,concept());
-$('rlPreview').onclick=()=>{draw(4,concept());say('Preview frame rendered. Select Render 12s to record video with original music.');};
-$('rlPacket').onclick=()=>{const c=concept();download(new Blob([JSON.stringify(packet(c),null,2)],{type:'application/json'}),filename(c,'C5-production.json'));say('Full C5 scene and original music production packet downloaded.');};
-$('rlPoster').onclick=()=>{const c=concept();draw(0,c);canvas.toBlob(b=>{if(b){download(b,filename(c,'poster.png'));say('Original PNG poster downloaded.')}else say('Poster export unavailable in this browser.');},'image/png');};
-$('rlMusic').onclick=async()=>{if(!window.OfflineAudioContext){say('Offline audio synthesis unavailable on this device.');return;}try{say('Composing an original 12-second instrumental on this device…');const rate=22050,ac=new OfflineAudioContext(1,12*rate,rate);sound(ac,ac.destination,0,12);const buffer=await ac.startRendering();download(wav(buffer),filename(concept(),'original-theme.wav'));say('Original synthesized 12-second WAV downloaded. No external AI or paid services.');}catch(e){say('Audio export unavailable: '+e.message)}};
+$('rlFormat').onchange=preview;
+$('rlPreview').onclick=preview;
+$('rlPacket').onclick=()=>{const c=project();download(new Blob([JSON.stringify(packet(c),null,2)],{type:'application/json'}),filename(c,'C5-production.json'));say('Full C5 scene and original music production packet downloaded.');};
+$('rlPoster').onclick=()=>{const c=project();draw(0,c);canvas.toBlob(b=>{if(b){download(b,filename(c,'poster.png'));say('Original PNG poster downloaded.')}else say('Poster export unavailable in this browser.');},'image/png');};
+$('rlMusic').onclick=async()=>{if(!window.OfflineAudioContext){say('Offline audio synthesis unavailable on this device.');return;}try{say('Composing an original 12-second instrumental on this device…');const c=project(),rate=22050,ac=new OfflineAudioContext(1,c.duration*rate,rate);sound(ac,ac.destination,0,c.duration,c.mood);const buffer=await ac.startRendering();download(wav(buffer),filename(c,c.duration+'sec-original-theme.wav'));say('Original synthesized '+c.duration+'-second WAV downloaded. No external AI or paid services.');}catch(e){say('Audio export unavailable: '+e.message)}};
 $('rlCreate').onclick=async()=>{
  if(recording){say('A render is already running.');return;}
  if(!canvas.captureStream||typeof MediaRecorder==='undefined'){say('This browser cannot record canvas video. Use poster and soundtrack exports instead.');return;}
- const c=concept();let a;try{a=new (window.AudioContext||window.webkitAudioContext)();await a.resume();}catch(e){say('Audio engine is unavailable: '+e.message);return;}
+ let c;try{c=project();}catch(e){say('Invalid scene map: '+e.message);return;}let a;try{a=new (window.AudioContext||window.webkitAudioContext)();await a.resume();}catch(e){say('Audio engine is unavailable: '+e.message);return;}
  const mime=['video/mp4;codecs="avc1.42E01E,mp4a.40.2"','video/webm;codecs=vp8,opus','video/webm'].find(x=>MediaRecorder.isTypeSupported(x));
  if(!mime){say('No supported local video recording format on this device.');await a.close();return;}
  try{
   $('rlCreate').disabled=true;$('rlStop').disabled=false;$('rlSaveVault').disabled=true;$('rlDownloads').replaceChildren();$('rlPlayback').hidden=true;
-  draw(0,c);const video=canvas.captureStream(24),dest=a.createMediaStreamDestination();const start=a.currentTime+.10;sound(a,dest,start,12);
+  draw(0,c);const video=canvas.captureStream(24),dest=a.createMediaStreamDestination();const start=a.currentTime+.10;sound(a,dest,start,c.duration,c.mood);
   const stream=new MediaStream([...video.getVideoTracks(),...dest.stream.getAudioTracks()]);const clips=[];
   const rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:1000000,audioBitsPerSecond:96000});recording=rec;audio=a;
   rec.ondataavailable=e=>{if(e.data?.size)clips.push(e.data)};
   rec.onerror=()=>say('Video recording failed in this browser. Try exporting the WAV or poster.');
-  rec.onstop=()=>{clearTimeout(timer);recording=null;$('rlCreate').disabled=false;$('rlStop').disabled=true;video.getTracks().forEach(x=>x.stop());dest.stream.getTracks().forEach(x=>x.stop());a.close().catch(()=>{});const blob=new Blob(clips,{type:mime.split(';')[0]});if(blob.size<1000){say('Recording produced no usable video. Try another browser.');return;}lastBlob=blob;$('rlSaveVault').disabled=false;if(previewURL)URL.revokeObjectURL(previewURL);previewURL=URL.createObjectURL(blob);$('rlPlayback').src=previewURL;$('rlPlayback').hidden=false;const ext=blob.type.includes('mp4')?'mp4':'webm';addLink(blob,filename(c,'12sec-promo.'+ext),'Download finished '+ext.toUpperCase());say('Finished '+blob.size.toLocaleString()+'-byte original video with synchronized synthesized music. Review it below; nothing uploaded.');};
+  rec.onstop=()=>{clearTimeout(timer);recording=null;$('rlCreate').disabled=false;$('rlStop').disabled=true;video.getTracks().forEach(x=>x.stop());dest.stream.getTracks().forEach(x=>x.stop());a.close().catch(()=>{});const blob=new Blob(clips,{type:mime.split(';')[0]});if(blob.size<1000){say('Recording produced no usable video. Try another browser.');return;}lastBlob=blob;lastRenderedMeta=c;$('rlSaveVault').disabled=false;if(previewURL)URL.revokeObjectURL(previewURL);previewURL=URL.createObjectURL(blob);$('rlPlayback').src=previewURL;$('rlPlayback').hidden=false;const ext=blob.type.includes('mp4')?'mp4':'webm';addLink(blob,filename(c,c.duration+'sec-promo.'+ext),'Download finished '+ext.toUpperCase());say('Finished '+blob.size.toLocaleString()+'-byte original video with synchronized synthesized music. Review it below; nothing uploaded.');};
   rec.start(250);const time=performance.now();let frame=0;
-  function animate(){if(recording!==rec||rec.state==='inactive')return;const seconds=Math.min(12,(performance.now()-time)/1000);draw(seconds,c);$('rlProgress').textContent=seconds.toFixed(1)+' / 12 seconds';if(seconds<12){requestAnimationFrame(animate);}else{rec.stop();}}requestAnimationFrame(animate);
-  timer=setTimeout(()=>{if(rec.state!=='inactive')rec.stop()},14500);say('Rendering an original 12-second motion-graphics clip with synchronized music. Keep this tab open.');
+  function animate(){if(recording!==rec||rec.state==='inactive')return;const seconds=Math.min(c.duration,(performance.now()-time)/1000);draw(seconds,c);$('rlProgress').textContent=seconds.toFixed(1)+' / '+c.duration+' seconds';if(seconds<c.duration){requestAnimationFrame(animate);}else{rec.stop();}}requestAnimationFrame(animate);
+  timer=setTimeout(()=>{if(rec.state!=='inactive')rec.stop()},(c.duration+3)*1000);say('Rendering an original '+c.duration+'-second motion-graphics clip with synchronized music. Keep this tab open.');
  }catch(e){recording=null;audio=null;await a.close().catch(()=>{});$('rlCreate').disabled=false;$('rlStop').disabled=true;say('Render unavailable: '+e.message)}
 };
 $('rlStop').onclick=()=>{if(recording&&recording.state!=='inactive'){recording.stop();say('Recording ended early; review the partial video or rerender.')}};
+$('rlDuration').onchange=()=>{if(recording){say('Finish recording before changing duration.');return;}updateDuration(true);};
+$('rlBuildSequence').onclick=()=>updateDuration(true);
+$('rlScrub').oninput=preview;
+$('rlMaster').onclick=()=>{try{const c=project();download(new Blob([JSON.stringify({schema:'IS-sequence-v32',config:c},null,2)],{type:'application/json'}),filename(c,'editable-master.json'));say('Editable master saved: restore the exact scene timing later.');}catch(e){say('Cannot export master: '+e.message);}};
+$('rlImportMaster').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>20000)throw Error('Master file too large');const obj=JSON.parse(await f.text());const c=obj.config;if(obj.schema!=='IS-sequence-v32'||!c||![12,24,36,60].includes(c.duration)||!['vertical','wide'].includes(c.format)||!moods[c.mood]||!Array.isArray(c.scenes)||c.scenes.length!==c.duration/12||!c.scenes.every(x=>Array.isArray(x)&&x.length===4&&x.every(v=>typeof v==='string'&&v.length>0&&v.length<=200)))throw Error('Invalid production master');if(['title','hook','twist','payoff'].some(k=>typeof c[k]!=='string'||c[k].length>300))throw Error('Invalid text');$('rlTitle').value=c.title.slice(0,100);$('rlHook').value=c.hook;$('rlTwist').value=c.twist;$('rlPayoff').value=c.payoff;$('rlDuration').value=String(c.duration);$('rlFormat').value=c.format;$('rlBeat').value=c.mood;$('rlScenes').value=formatScenes(c.scenes);updateDuration(false);say('Production master safely restored; other projects and canon are unchanged.');}catch(err){say('Master import rejected: '+err.message);}finally{e.target.value='';}};
 window.addEventListener('beforeunload',()=>{if(previewURL)URL.revokeObjectURL(previewURL);});
-draw(0,concept());
-window.ISRenderDock=Object.freeze({useSelectedIdea:use,preview:()=>draw(0,concept()),currentConcept:concept});
+$('rlScenes').value=formatScenes(generated(concept()));updateDuration(false);
+window.ISRenderDock=Object.freeze({useSelectedIdea:use,preview:()=>draw(0,concept()),currentConcept:concept,currentPacket:()=>packet(project()),currentSequence:()=>project().scenes});
 })();
+
 </script></body></html>
