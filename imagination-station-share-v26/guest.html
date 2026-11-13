@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Imagination Station — Independent Creator Guest Studio v34 · Idea Mutant + Connected Creation</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Imagination Station — Independent Creator Guest Studio v36 · Idea Mutant + Connected Creation</title>
 <style>
 :root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#09101d;color:#eef5ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#26355e,#09101d 67%);min-height:100vh}header,main,footer{max-width:1120px;margin:auto;padding:20px}header{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid #485c7d}h1{font-size:clamp(1.5rem,4vw,2.5rem);margin:.2em 0}h2{font-size:1.25rem}p{line-height:1.55}small,.muted{color:#afc1d5}nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.card{background:#152339;border:1px solid #3d5376;border-radius:16px;padding:20px;margin:12px 0}button,a.action{border:1px solid #768cb1;background:#293d62;color:white;font:inherit;font-weight:650;border-radius:10px;padding:10px 14px;cursor:pointer}button.primary{background:#4763b9;border-color:#88c9f2}button:hover{background:#385781}button[disabled]{opacity:.45;cursor:default}label{display:block;font-weight:650;font-size:.92rem;margin:12px 0 4px}input,select,textarea{font:inherit;display:block;color:#fff;background:#0a1729;border:1px solid #536b94;border-radius:10px;padding:11px;width:100%}textarea{min-height:125px;line-height:1.5} .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.pill{font-size:.76rem;padding:7px 10px;border:1px solid #77aeb3;border-radius:50px;color:#a8edeb}#message{border-left:3px solid #86e3d9;padding:8px 12px;background:#132b3b}.panel[hidden]{display:none!important}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.listItem{display:flex;justify-content:space-between;gap:12px;border:1px solid #45607c;border-radius:10px;padding:10px;margin:8px 0}.listItem button{font-size:.8rem}.fine{font-size:.83rem;color:#b4c8d9}canvas{display:block;width:100%;max-width:440px;aspect-ratio:9/16;background:#090e18;border:1px solid #6080ae;border-radius:10px;margin:auto}section.panel>h2{margin-top:0}footer{font-size:.82rem;color:#afc1d5;border-top:1px solid #31465e}@media(max-width:720px){.grid{grid-template-columns:1fr}header{align-items:start;flex-direction:column}}
 /* Parallel conversation + creator-controlled task engine */
@@ -49,6 +49,15 @@
 .cut-assembly canvas,.cut-assembly video{width:100%;max-height:420px;background:#071124;border-radius:12px;object-fit:contain}
 .cut-assembly .cut-note{border-left:3px solid #3ca7a0;padding:9px;background:#0b2739;margin:10px 0}
 @media(max-width:780px){.cut-grid{grid-template-columns:1fr}}
+
+/* V36: Optional Screening Room - real original demo media, separate from any private user uploads. */
+.screening-room{background:linear-gradient(140deg,#11263c,#191c38 75%);border:1px solid #387f89;border-radius:18px;padding:20px}
+.screening-kicker{font-size:11px;letter-spacing:.15em;font-weight:850;color:#72ead9}.screening-layout{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(260px,.82fr);gap:18px;align-items:start}
+.screening-layout video,.screening-layout audio{width:100%;display:block;border-radius:12px}.screening-layout video{aspect-ratio:16/9;object-fit:contain;background:#020712;border:1px solid #375f77}
+.screening-poster{width:100%;border:1px solid #527c96;border-radius:12px;max-height:200px;object-fit:cover}.screening-room a{color:#9dedeb}.screening-room .smallcaps{margin:5px 0}
+.screening-room .screening-btns{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}.screening-room .screening-btns button{background:#155c64;border-color:#70c9c6}
+.screening-label{font-size:12px;border:1px solid #527d80;border-radius:30px;display:inline-block;padding:6px 10px;color:#b7e6e8}.screening-room .screening-note{color:#c1d6e5;font-size:13px;line-height:1.55}
+@media(max-width:720px){.screening-layout{grid-template-columns:1fr}.screening-room{padding:14px}}
 </style></head><body>
 <header><div><div class="muted">SHARE-ONLY WEB STUDIO · INDEPENDENT CREATOR</div><h1>✦ Imagination Station</h1><div class="muted">Guest Studio v34 · Idea Mutant + Connected Creation · Browser-local data, not separate user accounts · No owner content bundled</div></div><span class="pill">$0 API spend</span></header>
 
@@ -56,7 +65,7 @@
 <section class="panel" id="creatorWorldMap" aria-label="My interactive world map">
 <div class="producer-toolbar"><div><div class="smallcaps">YOUR WORLD MAP · EXPLORE YOUR STUDIO</div><h2 id="worldMapTitle">A universe for every imagination</h2></div><span class="live-mark" id="worldMapBadge">DISCOVERY MODE</span></div>
 <p class="director-note" id="worldMapNarration">Explore a room to jump into your production tools. Each creator chooses a different world, energy and path.</p>
-<div class="world-rooms"><button type="button" class="world-room" data-world-room="ideas"><span class="room-icon">🧠</span>Idea Observatory<small>Mutate a spark</small></button><button type="button" class="world-room" data-world-room="forge"><span class="room-icon">🧬</span>Character Forge<small>Lock your canon</small></button><button type="button" class="world-room" data-world-room="create"><span class="room-icon">🎶</span>Commercial Studio<small>Jingles & scripts</small></button><button type="button" class="world-room" data-world-room="renderlab"><span class="room-icon">🎞</span>Production Hangar<small>Render an original video</small></button></div>
+<div class="world-rooms"><button type="button" class="world-room" data-world-room="ideas"><span class="room-icon">🧠</span>Idea Observatory<small>Mutate a spark</small></button><button type="button" class="world-room" data-world-room="forge"><span class="room-icon">🧬</span>Character Forge<small>Lock your canon</small></button><button type="button" class="world-room" data-world-room="create"><span class="room-icon">🎶</span>Commercial Studio<small>Jingles & scripts</small></button><button type="button" class="world-room" data-world-room="renderlab"><span class="room-icon">🎞</span>Production Hangar<small>Render an original video</small></button><button type="button" class="world-room" data-world-room="screening"><span class="room-icon">🍿</span>Screening Room<small>Play the finished film</small></button></div>
 </section>
 
 <main><section class="panel" id="parallel-studio"><div class="producer-toolbar"><div><div class="smallcaps">OMEGA GODKEY · CONVERSATION + TASK ORCHESTRATION</div><h2>Talk while the production desk works</h2></div><span class="live-mark" id="producerState">CREATOR-IN-CONTROL · LOCAL ENGINE</span></div>
@@ -74,7 +83,33 @@
  <div class="row"><button id="deviceCheckRun" class="smallBtn">Run device check</button><button id="deviceCheckReport" class="smallBtn">Download safe test results</button></div>
  <p class="fine">A passed storage check does not guarantee a large MP4 will fit. Your Media Vault has a 35 MB per-file limit and can still be erased by browser settings. Use full-studio backups for important work.</p>
 </section>
-<nav aria-label="Creator workspace"><button data-view="ideas" class="primary">✦ Idea Mutant</button><button data-view="create">Commercial + Jingle</button><button data-view="story">Storyboard</button><button data-view="motion">Silent Motion Video</button><button data-view="renderlab">🎥 Production Sequence Director</button><button data-view="cinema">🎞️ Cinema AI Director</button><button data-view="assembly">✂️ C5 Clip Assembly</button><button data-view="library">My Projects & Backups</button><button data-view="media">🎞️ MP4 / MP3 Media Deck</button><button data-view="forge">🧬 Character Forge + C5</button><button data-view="vault">🔒 Backup & Recovery</button></nav>
+<nav aria-label="Creator workspace"><button data-view="ideas" class="primary">✦ Idea Mutant</button><button data-view="create">Commercial + Jingle</button><button data-view="story">Storyboard</button><button data-view="motion">Silent Motion Video</button><button data-view="renderlab">🎥 Production Sequence Director</button><button data-view="cinema">🎞️ Cinema AI Director</button><button data-view="assembly">✂️ C5 Clip Assembly</button><button data-view="screening">🎬 Screening Room</button><button data-view="library">My Projects & Backups</button><button data-view="media">🎞️ MP4 / MP3 Media Deck</button><button data-view="forge">🧬 Character Forge + C5</button><button data-view="vault">🔒 Backup & Recovery</button></nav>
+
+<section class="panel screening-room" id="screening-room" data-panel="screening" hidden>
+  <div class="screening-kicker">IMAGINATION STATION · CREATOR SHOWCASE V36</div>
+  <h2>🍿 Screening Room — Watch the finished work</h2>
+  <p class="screening-note">A real original <b>24-second motion-graphics movie</b> with an audio track, two separately editable source takes, and its MP3 soundtrack. This is a verified demonstration of the current no-cost renderer, <b>not AI-generated character animation</b>. The showcase is optional; your personalized world and private creative work remain your own.</p>
+  <div class="screening-layout">
+    <div>
+      <video id="screeningFilm" controls playsinline preload="metadata" aria-label="Finished 24-second original movie"></video>
+      <div class="screening-btns">
+        <a id="screeningFilmLink" download="Moonlight-Parcel-Express-24s.mp4">Download the finished MP4</a>
+        <button type="button" id="screeningImport">Load both takes into C5 Clip Assembly</button>
+      </div>
+      <p id="screeningStatus" class="screening-note" role="status" aria-live="polite">This sample loads only on the hosted, invitation-access studio.</p>
+      <span class="screening-label">24 seconds · H.264 video + AAC audio</span>
+      <span class="screening-label">Two ~12-second source takes</span>
+    </div>
+    <div>
+      <img class="screening-poster" id="screeningPoster" alt="Original movie poster: Moonlight Parcel Express" />
+      <div class="smallcaps">THEME AUDIO</div>
+      <audio id="screeningTheme" controls preload="none" aria-label="Original instrumental theme"></audio>
+      <div class="screening-btns"><a id="screeningThemeLink" download="Moonlight-Parcel-Express-Theme.mp3">Download the original MP3</a></div>
+      <p class="screening-note">Take it further: re-order and trim both source takes, export a new cut, preserve the C5 edit plan, or bring your own footage. No media is uploaded from your device by this showcase.</p>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -589,7 +624,7 @@ function palette(p){let w=worlds[p.realm]||worlds.galaxy;const hue={galaxy:175,a
 function preview(){const p=draft();palette(p);const w=worlds[p.realm];$('gateNarration').textContent=w.narrative+' The '+toneText(p.tone)+' route is waiting for '+(p.name||'you')+'.';$('gateError').textContent=''}
 function render(p){current=p;palette(p);const world=worlds[p.realm];const sectors=['Aster','Vox','Nova','Flux','Prism','Orbit','Ripple','Pixel'];const district=sectors[(p.seed>>>4)%sectors.length]+'-'+String(p.seed%997).padStart(3,'0');$('worldHudName').textContent=(p.name?`${p.name}'s `:'')+world.label;$('worldHudCoordinates').textContent='CREATOR COORDINATES · '+district;$('worldMapTitle').textContent='Welcome to '+world.label+', '+p.name;$('worldMapNarration').textContent=world.narrative+' Your '+toneText(p.tone)+' approach and '+p.focus+' projects set the direction. Create and explore at your pace.';$('worldMapBadge').textContent=district;
 const roomLabels={galaxy:[['🌠','Idea Nebula','Imagine a new star'],['🛸','Hero Foundry','Protect character canon'],['🎼','Sound Comet','Write music and ads'],['🎞️','Render Dock','Import finished media']],arcade:[['🕹','Mutant Arcade','Generate surprising ideas'],['👾','Avatar Workshop','Lock character continuity'],['🎵','Jingle Machine','Build a commercial'],['📼','Replay Theatre','Play finished media']],forge:[['⚡','Spark Chamber','Forge original concepts'],['🧬','Identity Anvil','Approve character canon'],['🎛','Production Furnace','Make scripts & jingles'],['🚀','Launch Hangar','Render your videos']],sound:[['🎷','Beat Lab','Find your next idea'],['🎤','Voice Casting','Lock approved characters'],['🎹','Jingle District','Create music briefs'],['📹','Video Venue','Make a music trailer']],wild:[['🌀','Idea Jungle','Mutate a strange spark'],['🦋','Creature Grove','Define characters'],['🥁','Rhythm River','Build ads & jingles'],['🎥','Vision Falls','Create motion video']]};
-document.querySelectorAll('[data-world-room]').forEach((btn,i)=>{const [ico,title,caption]=roomLabels[p.realm][i];const symbol=document.createElement('span');symbol.className='room-icon';symbol.textContent=ico;const sub=document.createElement('small');sub.textContent=caption;btn.replaceChildren(symbol,document.createTextNode(title),sub);btn.setAttribute('aria-label',title+'. '+caption)});$('gateName').value=p.name;$('gateRealm').value=p.realm;$('gateTone').value=p.tone;$('gateFocus').value=p.focus;$('gateSpark').value=p.spark;}
+document.querySelectorAll('[data-world-room]').forEach((btn,i)=>{const [ico,title,caption]=roomLabels[p.realm][i]||['🍿','Screening Room','Watch the finished movie'];const symbol=document.createElement('span');symbol.className='room-icon';symbol.textContent=ico;const sub=document.createElement('small');sub.textContent=caption;btn.replaceChildren(symbol,document.createTextNode(title),sub);btn.setAttribute('aria-label',title+'. '+caption)});$('gateName').value=p.name;$('gateRealm').value=p.realm;$('gateTone').value=p.tone;$('gateFocus').value=p.focus;$('gateSpark').value=p.spark;}
 function closeGate(){const gate=$('creatorWorldGate');gate.hidden=true;document.body.style.overflow='';document.querySelector('header').inert=false;document.querySelector('main').inert=false;$('rebuildWorld').focus({preventScroll:true})}
 function openGate(){preview();document.querySelector('header').inert=true;document.querySelector('main').inert=true;const gate=$('creatorWorldGate');gate.hidden=false;gate.scrollTop=0;document.body.style.overflow='hidden';$('gateName').focus({preventScroll:true})}
 $('gatePreview').onclick=preview;
@@ -812,6 +847,41 @@ $('cutDownload').onclick=()=>{if(!lastOutput)return;download(lastOutput,'Imagina
 try{const raw=localStorage.getItem(PERSIST);if(raw){const p=JSON.parse(raw);if(validPlan(p)){pendingPlan=p;$('cutFormat').value=p.layout;const candidate=availableCinema();if(candidate&&candidate.id===p.cinema_id)boundCinema=candidate;status('Your previous edit layout was found. Reimport its source clips to restore the cut.')}}}catch{}
 renderList();
 window.ISClipAssembly=Object.freeze({importFiles:addFiles,qa,plan,validPlan,clipCount:()=>clips.length,render:assemble});
+})();
+</script>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id),root='/demo/',isHosted=location.protocol==='https:'||location.protocol==='http:';
+const files={movie:'finished-24s.mp4',theme:'theme.mp3',poster:'poster.jpg',takes:['take-01.mp4','take-02.mp4']};
+const say=(message,isError=false)=>{const el=$('screeningStatus');if(el){el.textContent=message;el.style.color=isError?'#ffb5b5':'#b7f4e7';}};
+if(!isHosted){say('The showcase media is available through the hosted invitation link. Your offline creative tools still work.');$('screeningImport').disabled=true;return;}
+$('screeningFilm').src=root+files.movie;
+$('screeningPoster').src=root+files.poster;
+$('screeningTheme').src=root+files.theme;
+$('screeningFilmLink').href=root+files.movie;
+$('screeningThemeLink').href=root+files.theme;
+$('screeningFilm').addEventListener('loadedmetadata',()=>say('24-second original demonstration is ready to watch or download.'));
+$('screeningFilm').addEventListener('error',()=>say('The sample video could not load. Reopen the full invitation link or check connection.',true));
+$('screeningImport').addEventListener('click',async()=>{
+ const b=$('screeningImport');if(b.disabled)return;
+ if(!window.ISClipAssembly||typeof window.ISClipAssembly.importFiles!=='function'){say('The Clip Assembly editor is not ready.',true);return;}
+ b.disabled=true;say('Retrieving two original source takes inside this invitation session…');
+ try{
+   const urls=files.takes.map(name=>root+name);
+   const fetched=await Promise.all(urls.map(url=>fetch(url,{credentials:'same-origin',cache:'no-store'})));
+   if(fetched.some(r=>!r.ok))throw Error('The studio could not read the demo takes ('+fetched.map(r=>r.status).join('/')+').');
+   const blobs=await Promise.all(fetched.map(r=>r.blob()));
+   if(blobs.some(blob=>blob.size<10000||blob.size>40*1024*1024||!blob.type.includes('video')))throw Error('Unexpected demo video format or size.');
+   const realFiles=blobs.map((blob,i)=>new File([blob],files.takes[i],{type:'video/mp4',lastModified:Date.now()}));
+   document.querySelector('[data-view="assembly"]')?.click();
+   const before=window.ISClipAssembly.clipCount();
+   await window.ISClipAssembly.importFiles(realFiles);
+   const after=window.ISClipAssembly.clipCount();
+   if(after<=before){say('These source takes are already present, or the editor is full. Existing footage was not replaced.');return;}
+   say('Added '+(after-before)+' original source take(s) to Clip Assembly. You can audition, trim, reorder, and render your new version.');
+ }catch(e){say('Unable to load demo: '+String(e?.message||e).slice(0,140),true);}
+ finally{b.disabled=false;}
+});
 })();
 </script>
 </body></html>
