@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Imagination Station — Independent Creator Guest Studio v36 · Idea Mutant + Connected Creation</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Imagination Station — Independent Creator Guest Studio v37 · Idea Mutant + Connected Creation</title>
 <style>
 :root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#09101d;color:#eef5ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#26355e,#09101d 67%);min-height:100vh}header,main,footer{max-width:1120px;margin:auto;padding:20px}header{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid #485c7d}h1{font-size:clamp(1.5rem,4vw,2.5rem);margin:.2em 0}h2{font-size:1.25rem}p{line-height:1.55}small,.muted{color:#afc1d5}nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.card{background:#152339;border:1px solid #3d5376;border-radius:16px;padding:20px;margin:12px 0}button,a.action{border:1px solid #768cb1;background:#293d62;color:white;font:inherit;font-weight:650;border-radius:10px;padding:10px 14px;cursor:pointer}button.primary{background:#4763b9;border-color:#88c9f2}button:hover{background:#385781}button[disabled]{opacity:.45;cursor:default}label{display:block;font-weight:650;font-size:.92rem;margin:12px 0 4px}input,select,textarea{font:inherit;display:block;color:#fff;background:#0a1729;border:1px solid #536b94;border-radius:10px;padding:11px;width:100%}textarea{min-height:125px;line-height:1.5} .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.pill{font-size:.76rem;padding:7px 10px;border:1px solid #77aeb3;border-radius:50px;color:#a8edeb}#message{border-left:3px solid #86e3d9;padding:8px 12px;background:#132b3b}.panel[hidden]{display:none!important}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.listItem{display:flex;justify-content:space-between;gap:12px;border:1px solid #45607c;border-radius:10px;padding:10px;margin:8px 0}.listItem button{font-size:.8rem}.fine{font-size:.83rem;color:#b4c8d9}canvas{display:block;width:100%;max-width:440px;aspect-ratio:9/16;background:#090e18;border:1px solid #6080ae;border-radius:10px;margin:auto}section.panel>h2{margin-top:0}footer{font-size:.82rem;color:#afc1d5;border-top:1px solid #31465e}@media(max-width:720px){.grid{grid-template-columns:1fr}header{align-items:start;flex-direction:column}}
 /* Parallel conversation + creator-controlled task engine */
@@ -58,8 +58,15 @@
 .screening-room .screening-btns{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}.screening-room .screening-btns button{background:#155c64;border-color:#70c9c6}
 .screening-label{font-size:12px;border:1px solid #527d80;border-radius:30px;display:inline-block;padding:6px 10px;color:#b7e6e8}.screening-room .screening-note{color:#c1d6e5;font-size:13px;line-height:1.55}
 @media(max-width:720px){.screening-layout{grid-template-columns:1fr}.screening-room{padding:14px}}
+
+/* v37: Secure creator vault. Explicit, device-side AES-GCM only. */
+.secure-vault{margin:16px 0;padding:17px;border:1px solid #668d9b;border-radius:18px;background:linear-gradient(120deg,#13233e,#112c36)}
+.secure-vault h3{margin-top:0;color:#a8f2e4}.secure-vault .grid{gap:14px}.secure-vault p{line-height:1.55;color:#c2d9e6}
+.secure-vault button{margin-top:10px}.secure-vault input[type=password],.secure-vault input[type=file]{background:#0d1b2c;color:#eef;border:1px solid #6a899d;border-radius:9px;padding:11px;width:100%;max-width:100%;box-sizing:border-box}
+@media(max-width:780px){.secure-vault .grid{grid-template-columns:1fr}}
+.release-audit{margin-top:14px;border:1px solid #527681;background:#0e2537;border-radius:13px;padding:12px}.release-audit h3{margin:5px 0}.release-audit .producer-toolbar{gap:8px}.release-audit button{width:auto;flex-shrink:0}@media(max-width:420px){.release-audit .producer-toolbar{flex-wrap:wrap}}
 </style></head><body>
-<header><div><div class="muted">SHARE-ONLY WEB STUDIO · INDEPENDENT CREATOR</div><h1>✦ Imagination Station</h1><div class="muted">Guest Studio v34 · Idea Mutant + Connected Creation · Browser-local data, not separate user accounts · No owner content bundled</div></div><span class="pill">$0 API spend</span></header>
+<header><div><div class="muted">SHARE-ONLY WEB STUDIO · INDEPENDENT CREATOR</div><h1>✦ Imagination Station</h1><div class="muted">Guest Studio v37 · Idea Mutant + Connected Creation · Browser-local data, not separate user accounts · No owner content bundled</div></div><span class="pill">$0 API spend</span></header>
 
 <div class="world-hud" id="creatorWorldHud"><span aria-hidden="true">✦</span><strong id="worldHudName">Your creative universe</strong><span id="worldHudCoordinates" class="muted">Portal not configured</span><button class="smallBtn" id="rebuildWorld" type="button">🌌 Rebuild My World</button></div>
 <section class="panel" id="creatorWorldMap" aria-label="My interactive world map">
@@ -81,6 +88,7 @@
  <p class="director-note">This check runs here on your device, not on a simulated browser. It verifies browser storage and a tiny temporary MP3-like Blob, then confirms persistence after you next reopen the studio. It never sends your projects, media, or passwords to our server.</p>
  <p id="deviceCheckResult" role="status" aria-live="polite">Running initial checks…</p>
  <div class="row"><button id="deviceCheckRun" class="smallBtn">Run device check</button><button id="deviceCheckReport" class="smallBtn">Download safe test results</button></div>
+ <div class="release-audit" id="release-audit-v37"><div class="producer-toolbar"><div><div class="smallcaps">LIVE HOSTING + VIDEO DELIVERY</div><h3>Release 37 readiness</h3></div><button id="releaseCheckRun" type="button" class="smallBtn">Verify this live studio</button></div><p class="fine">Checks authenticated hosting and the original example MP4/MP3 without uploading any of your creative work. No provider-generation or cloud account is implied.</p><p id="releaseCheckStatus" role="status" aria-live="polite">Not checked on this device. Render deploy status alone is not browser acceptance.</p></div>
  <p class="fine">A passed storage check does not guarantee a large MP4 will fit. Your Media Vault has a 35 MB per-file limit and can still be erased by browser settings. Use full-studio backups for important work.</p>
 </section>
 <nav aria-label="Creator workspace"><button data-view="ideas" class="primary">✦ Idea Mutant</button><button data-view="create">Commercial + Jingle</button><button data-view="story">Storyboard</button><button data-view="motion">Silent Motion Video</button><button data-view="renderlab">🎥 Production Sequence Director</button><button data-view="cinema">🎞️ Cinema AI Director</button><button data-view="assembly">✂️ C5 Clip Assembly</button><button data-view="screening">🎬 Screening Room</button><button data-view="library">My Projects & Backups</button><button data-view="media">🎞️ MP4 / MP3 Media Deck</button><button data-view="forge">🧬 Character Forge + C5</button><button data-view="vault">🔒 Backup & Recovery</button></nav>
@@ -196,9 +204,16 @@
  <div id="canonList" aria-live="polite"></div>
 </section>
 <section class="panel" id="creator-vault" data-panel="vault" hidden>
- <h2>🔒 Creator Vault · Complete backup / restore</h2><p>Protect your work before changing phones or browsers. One backup contains local ideas, commercial kits, conversations, completed production tasks and character canon. <b>Backups are plaintext and not encrypted.</b> Never send your private file to someone else.</p>
- <div class="row"><button class="primary" id="vaultBackupAll">Download full studio backup (.json)</button><button id="vaultCheck">Check browser storage</button><button id="vaultPersist">Ask browser to preserve storage</button></div>
+ <h2>🔒 Creator Vault · Complete backup / restore</h2><p>Protect your work before changing phones or browsers. Your backup contains local ideas, commercial kits, conversations, completed production tasks and character canon. Plain JSON exports remain unencrypted; use the optional encrypted travel case below for private transfers.</p>
+ <div class="row"><button class="primary" id="vaultBackupAll">Download unencrypted backup (.json)</button><button id="vaultCheck">Check browser storage</button><button id="vaultPersist">Ask browser to preserve storage</button></div>
  <p class="fine" id="vaultHealth" role="status">Storage is local to this browser and can be removed by clearing site data.</p>
+ <div class="secure-vault" id="secureCreatorVault" aria-labelledby="secureVaultTitle">
+  <h3 id="secureVaultTitle">🛡️ Encrypted Travel Case · Portable creator backup</h3>
+  <p>Create a password-protected archive of your ideas, character locks, conversations, world, scripts, Cinema Bible and C5 edit plans. Encryption runs on this device using AES-256-GCM; no backup or password is uploaded. <b>MP4, MP3 and artwork files must be transferred separately.</b></p>
+  <div class="grid"><div><label for="securePass">Your strong passphrase (14 characters minimum)</label><input type="password" id="securePass" autocomplete="new-password" minlength="14" maxlength="200" placeholder="A long unique phrase only you know"><label for="secureConfirm">Confirm passphrase for export</label><input type="password" id="secureConfirm" autocomplete="new-password" minlength="14" maxlength="200" placeholder="Type the same phrase again"><button type="button" class="primary" id="secureExport">Encrypt &amp; download complete project backup</button></div>
+  <div><label for="secureFile">Restore encrypted project archive (.isvault)</label><input type="file" id="secureFile" accept=".isvault,application/json"><label for="secureRestorePass">Archive passphrase</label><input type="password" id="secureRestorePass" autocomplete="off" maxlength="200" placeholder="Passphrase used when exported"><button type="button" id="secureRestore">Unlock, validate &amp; choose restore</button></div></div>
+  <p class="fine" id="secureStatus" role="status" aria-live="polite">Secure backup is optional. Your password cannot be recovered by Imagination Station. Keep it somewhere safe.</p>
+ </div>
  <label for="vaultImport">Restore an Imagination Station V28 backup</label><input type="file" id="vaultImport" accept=".json,application/json">
  <label for="vaultMode">Import behavior</label><select id="vaultMode"><option value="merge">Merge without replacing existing records</option><option value="replace">Replace all local studio records (requires extra approval)</option></select>
  <div class="row"><button id="vaultRestore" class="primary">Validate and restore backup</button><button id="vaultErase">Erase all local creative data from this browser</button></div>
@@ -501,11 +516,19 @@ function validateStudioPayload(p){
  return d;
 }
 function download(name,body){const url=URL.createObjectURL(new Blob([body],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),15000)}
-$('vaultBackupAll').onclick=()=>{try{const raw={format:'imagination-station-backup-v28',schema:1,exported_at:new Date().toISOString(),data:{projects:from(KITS,[]),ideas:from(IDEAS,{ideas:[],selectedIdea:''}),work:from(WORK,{version:1,jobs:[],chat:[],interview:{step:-1,answers:[]}}),canon:loadCanon(),world:(()=>{try{return JSON.parse(localStorage.getItem('is-personal-creator-world-v30')||'null')}catch{return null}})(),cinema:(()=>{try{return JSON.parse(localStorage.getItem('is-cinema-bible-v33')||'null')}catch{return null}})(),assembly:(()=>{try{const active=window.ISClipAssembly?.clipCount?.()>0?window.ISClipAssembly.plan():null;if(active&&window.ISClipAssembly.validPlan(active))return active;const prior=JSON.parse(localStorage.getItem('is-clip-assembly-v34')||'null');return window.ISClipAssembly?.validPlan?.(prior)?prior:null;}catch{return null}})()}};validateStudioPayload(raw);const out=JSON.stringify(raw,null,2);if(out.length>MAX)throw Error('Work exceeds 3 MB backup size; archive older tasks first.');download('IMAGINATION_STATION_COMPLETE_v35_'+new Date().toISOString().slice(0,10)+'.json',out);$('vaultHealth').textContent='Complete studio backup exported. Store the JSON privately. The file is not encrypted.';}catch(e){$('vaultHealth').textContent='Backup unavailable: '+e.message;}};
+let pendingSecureBackup=null;
+function buildFullBackup(){const raw={format:'imagination-station-backup-v28',schema:1,exported_at:new Date().toISOString(),data:{projects:from(KITS,[]),ideas:from(IDEAS,{ideas:[],selectedIdea:''}),work:from(WORK,{version:1,jobs:[],chat:[],interview:{step:-1,answers:[]}}),canon:loadCanon(),world:(()=>{try{return JSON.parse(localStorage.getItem('is-personal-creator-world-v30')||'null')}catch{return null}})(),cinema:(()=>{try{return JSON.parse(localStorage.getItem('is-cinema-bible-v33')||'null')}catch{return null}})(),assembly:(()=>{try{const active=window.ISClipAssembly?.clipCount?.()>0?window.ISClipAssembly.plan():null;if(active&&window.ISClipAssembly.validPlan(active))return active;const prior=JSON.parse(localStorage.getItem('is-clip-assembly-v34')||'null');return window.ISClipAssembly?.validPlan?.(prior)?prior:null;}catch{return null}})()}};validateStudioPayload(raw);const length=new TextEncoder().encode(JSON.stringify(raw)).byteLength;if(length>MAX)throw Error('Work exceeds 3 MB backup size. Export smaller project archives first.');return raw;}
+window.ISCreatorBackup=Object.freeze({
+ build:()=>buildFullBackup(),
+ validate:(payload)=>validateStudioPayload(payload),
+ stageDecrypted:(payload)=>{validateStudioPayload(payload);const text=JSON.stringify(payload);if(new TextEncoder().encode(text).byteLength>MAX)throw Error('Decrypted archive is too large.');pendingSecureBackup=new File([text],'private-verified-archive.json',{type:'application/json'});},
+ consumeDecrypted:()=>{const f=pendingSecureBackup;pendingSecureBackup=null;return f;}
+});
+$('vaultBackupAll').onclick=()=>{try{const out=JSON.stringify(buildFullBackup(),null,2);download('IMAGINATION_STATION_COMPLETE_v37_'+new Date().toISOString().slice(0,10)+'.json',out);$('vaultHealth').textContent='Unencrypted JSON backup exported. Protect the file; use the encrypted travel case for sharing or transfers.';}catch(e){$('vaultHealth').textContent='Backup unavailable: '+e.message;}};
 $('vaultCheck').onclick=async()=>{try{const est=await navigator.storage?.estimate?.();const amount=est?.usage===undefined?'unavailable':(est.usage/1024/1024).toFixed(2)+' MB';const available=est?.quota===undefined?'unknown':(est.quota/1024/1024).toFixed(0)+' MB';$('vaultHealth').textContent='Browser storage: '+amount+' in use / '+available+' quota. Local data is not cloud-synced and may be erased.';}catch{$('vaultHealth').textContent='Storage estimate unavailable. Download a backup regularly.';}};
 $('vaultPersist').onclick=async()=>{try{const ok=await navigator.storage?.persist?.();$('vaultHealth').textContent=ok?'Browser granted persistent storage preference. Keep backups anyway.':'Persistent storage not granted or unavailable. Keep regular backups.';}catch{$('vaultHealth').textContent='Persistent storage request unavailable. Keep backups.';}};
 function mergeById(a,b,limit){const items=Array.isArray(a)?a.slice(0,limit):[];const keys=new Set(items.map(x=>x.id));for(const it of b){if(!keys.has(it.id)){if(items.length>=limit)throw Error('Merge would exceed '+limit+' records. Export current work and archive older records, or choose Replace.');items.push(it);keys.add(it.id)}}return items;}
-$('vaultRestore').onclick=async()=>{const file=$('vaultImport').files?.[0];if(!file){$('vaultHealth').textContent='Choose a complete studio backup JSON first.';return;}if(file.size>MAX){$('vaultHealth').textContent='Backup exceeds 3 MB safety limit.';return;}
+$('vaultRestore').onclick=async()=>{const file=window.ISCreatorBackup?.consumeDecrypted?.()||$('vaultImport').files?.[0];if(!file){$('vaultHealth').textContent='Choose a complete studio backup JSON first.';return;}if(file.size>MAX){$('vaultHealth').textContent='Backup exceeds 3 MB safety limit.';return;}
  try{const imported=JSON.parse(await file.text()),d=validateStudioPayload(imported),mode=$('vaultMode').value;let merged={...d};
  if(mode==='merge'){
   const oldProjects=from(KITS,[]),oldIdeas=from(IDEAS,{ideas:[],selectedIdea:''}),oldWork=from(WORK,{version:1,jobs:[],chat:[],interview:{step:-1,answers:[]}}),oldCanon=loadCanon();
@@ -536,6 +559,37 @@ $('vaultRestore').onclick=async()=>{const file=$('vaultImport').files?.[0];if(!f
  }catch(e){$('vaultHealth').textContent='Import rejected: '+e.message;}
 };
 $('vaultErase').onclick=()=>{if(prompt('Erase all local creative records on THIS DEVICE? Type ERASE to confirm.')!=='ERASE')return;for(const k of [KITS,IDEAS,WORK,CANON,'is-personal-creator-world-v30','is-cinema-bible-v33','is-clip-assembly-v34'])localStorage.removeItem(k);$('vaultHealth').textContent='Local creative records and edit plan cleared; pinned media is separate. Refreshing…';location.reload();};
+})();
+</script><script>
+/* V37 Portable encrypted creator case. No network, no cloud key escrow. */
+(()=>{'use strict';
+const $=id=>document.getElementById(id),MAX_IN=4*1024*1024,MAX_OUT=3*1024*1024,ITER=350000;
+const status=(m)=>{$('secureStatus').textContent=m;};
+const available=()=>Boolean(window.isSecureContext&&crypto?.subtle&&crypto?.getRandomValues&&window.ISCreatorBackup);
+function base64(bytes){let text='';for(let i=0;i<bytes.length;i+=8192)text+=String.fromCharCode(...bytes.subarray(i,i+8192));return btoa(text);}
+function unbase64(str){if(typeof str!=='string'||str.length>MAX_IN*2||!/^[A-Za-z0-9+/]*={0,2}$/.test(str))throw Error('Invalid encrypted file data.');return Uint8Array.from(atob(str),c=>c.charCodeAt(0));}
+async function keyFor(pass,salt,iterations=ITER){const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(pass),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations,hash:'SHA-256'},key,{name:'AES-GCM',length:256},false,['encrypt','decrypt']);}
+async function seal(payload,pass){if(!available())throw Error('Encryption requires a secure HTTPS browser with Web Crypto.');if(typeof pass!=='string'||pass.length<14||pass.length>200)throw Error('Use a unique passphrase of 14–200 characters.');window.ISCreatorBackup.validate(payload);
+ const plain=new TextEncoder().encode(JSON.stringify(payload));if(plain.byteLength>MAX_OUT)throw Error('Backup is larger than 3 MB. Archive older work first.');
+ const salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12));const key=await keyFor(pass,salt);
+ const protectedBytes=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,plain);
+ return {format:'imagination-station-encrypted-v37',schema:1,cipher:'AES-256-GCM',kdf:'PBKDF2-SHA-256',iterations:ITER,salt:base64(salt),iv:base64(iv),ciphertext:base64(new Uint8Array(protectedBytes))};}
+async function unseal(packageData,pass){if(!available())throw Error('Secure HTTPS browser encryption is unavailable.');
+ if(!packageData||packageData.format!=='imagination-station-encrypted-v37'||packageData.schema!==1||packageData.cipher!=='AES-256-GCM'||packageData.kdf!=='PBKDF2-SHA-256'||packageData.iterations!==ITER)throw Error('Unsupported encrypted archive or encryption settings.');
+ const salt=unbase64(packageData.salt),iv=unbase64(packageData.iv),ciphertext=unbase64(packageData.ciphertext);
+ if(salt.length!==16||iv.length!==12||ciphertext.byteLength<16||ciphertext.byteLength>MAX_IN)throw Error('Invalid archive dimensions.');
+ if(typeof pass!=='string'||!pass.length)throw Error('Enter the archive passphrase.');
+ let plain;try{const key=await keyFor(pass,salt,packageData.iterations);plain=await crypto.subtle.decrypt({name:'AES-GCM',iv},key,ciphertext);}catch{throw Error('Wrong passphrase, altered file, or unreadable archive. Nothing was restored.');}
+ if(plain.byteLength>MAX_OUT)throw Error('Unsealed data is too large.');let decoded;try{decoded=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(plain))}catch{throw Error('Decrypted JSON is invalid.');}
+ window.ISCreatorBackup.validate(decoded);return decoded;
+}
+function exportFile(name,source){const blob=new Blob([source],{type:'application/json'});const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),15000);}
+$('secureExport').onclick=async()=>{const button=$('secureExport');if(button.disabled)return;const pass=$('securePass').value,confirm=$('secureConfirm').value;
+ if(pass!==confirm){status('Passphrase confirmation does not match. Nothing exported.');return;}
+ button.disabled=true;try{status('Encrypting on this device…');const pack=await seal(window.ISCreatorBackup.build(),pass);exportFile('Imagination-Station-PROTECTED-v37-'+new Date().toISOString().slice(0,10)+'.isvault',JSON.stringify(pack));status('Protected archive downloaded. Keep the passphrase separately and transfer your original MP4/MP3 files too. No files uploaded.');}catch(e){status('Encrypted export failed: '+e.message);}finally{$('securePass').value='';$('secureConfirm').value='';button.disabled=false;}}
+$('secureRestore').onclick=async()=>{const f=$('secureFile').files?.[0],pass=$('secureRestorePass').value,button=$('secureRestore');if(!f){status('Choose a .isvault encrypted archive first.');return;}if(f.size>MAX_IN){status('Encrypted archive exceeds the 4 MB safety limit.');return;}
+ button.disabled=true;try{status('Unlocking and validating the archive locally…');const pack=JSON.parse(await f.text());const raw=await unseal(pack,pass);window.ISCreatorBackup.stageDecrypted(raw);status('Archive decrypted and validated. Follow the existing Merge/Replace confirmation to restore it.');$('vaultRestore').click();}catch(e){status('Archive not imported: '+e.message);}finally{$('secureRestorePass').value='';button.disabled=false;}}
+window.ISSecureVault=Object.freeze({seal,unseal,isAvailable:available});
 })();
 </script><script>
 (()=>{'use strict';
@@ -884,4 +938,30 @@ $('screeningImport').addEventListener('click',async()=>{
 });
 })();
 </script>
-</body></html>
+<script>
+/* V37: On-device live-release self-test; never sends creator projects. */
+(()=>{'use strict';
+const el=id=>document.getElementById(id),state=el('releaseCheckStatus'),button=el('releaseCheckRun');
+async function run(probe=fetch){
+ button.disabled=true;state.textContent='Verifying invitation session, application version, and protected film delivery…';
+ const json=async(resp)=>{try{return await resp.json()}catch{return null}};
+ try{
+  const opts={credentials:'same-origin',cache:'no-store'};
+  const ready=await probe('/readiness',opts),body=await json(ready);
+  if(!ready.ok||body?.status!=='ready'||body?.version!=='37')throw Error('Host reports '+(body?.version||ready.status)+'. Refresh from the full invitation link.');
+  const outputs=[];
+  for(const [url,label,minimum] of [['/demo/finished-24s.mp4','MP4 film',100000],['/demo/theme.mp3','MP3 soundtrack',25000]]){
+   const res=await probe(url,{...opts,method:'HEAD'});
+   const len=Number(res.headers?.get?.('content-length')||0),kind=res.headers?.get?.('content-type')||'';
+   if(!res.ok||len<minimum||!(url.endsWith('mp4')?kind.includes('video/mp4'):kind.includes('audio/mpeg')))
+      throw Error(label+' response failed ('+res.status+').');
+   outputs.push(label+' '+Math.round(len/1024)+' KB');
+  }
+  state.textContent='PASS: Version 37 private host, invitation session, '+outputs.join(', ')+'. Local storage and AI generation require separate checks.';
+  return {ok:true,version:body.version,media:outputs};
+ }catch(e){state.textContent='NOT VERIFIED: '+String(e.message||e).slice(0,170)+' Local video creation and portable backups remain available.';return {ok:false,error:String(e.message||e)}}
+ finally{button.disabled=false;}
+}
+button.onclick=()=>run();window.ISReleaseCheck=Object.freeze({run});
+})();
+</script></body></html>
