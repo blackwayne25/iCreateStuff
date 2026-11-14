@@ -16,7 +16,8 @@ const DEMO=Object.freeze({
  "/demo/take-01.mp4":{file:"take-01.mp4",type:"video/mp4"},
  "/demo/take-02.mp4":{file:"take-02.mp4",type:"video/mp4"},
  "/demo/theme.mp3":{file:"theme.mp3",type:"audio/mpeg"},
- "/demo/poster.jpg":{file:"poster.jpg",type:"image/jpeg"}
+ "/demo/poster.jpg":{file:"poster.jpg",type:"image/jpeg"},
+ "/demo/ruc-world.jpg":{file:"ruc-world.jpg",type:"image/jpeg"}
 });
 const media=new Map(Object.entries(DEMO).map(([route,detail])=>[route,{type:detail.type,body:fs.readFileSync(path.join(__dirname,"demo",detail.file))}]));
 function serveDemo(req,res,loc){
@@ -39,11 +40,11 @@ function serveDemo(req,res,loc){
 http.createServer(async (req,res)=>{
  if(!rateOK(req))return reply(res,429,"Rate limited");
  const loc=new URL(req.url,"http://localhost").pathname;
- if(req.method==="GET"&&loc==="/health")return reply(res,200,JSON.stringify({app:"imagination-station-share",version:"37",status:"ready",ok:true}),"application/json");
+ if(req.method==="GET"&&loc==="/health")return reply(res,200,JSON.stringify({app:"imagination-station-share",version:"39",status:"ready",ok:true}),"application/json");
  if(req.method==="GET"&&loc==="/readiness"){
    if(!authorized(req))return reply(res,401,JSON.stringify({status:"denied"}),"application/json");
    const assets={};for(const [route,blob] of media)assets[route]={bytes:blob.body.length,type:blob.type};
-   return reply(res,200,JSON.stringify({app:"imagination-station",version:"37",status:"ready",access:"invitation_session",ai_provider:"disabled",creator_cloud_accounts:"not_enabled",examples:assets}),"application/json");
+   return reply(res,200,JSON.stringify({app:"imagination-station",version:"39",status:"ready",access:"invitation_session",ai_provider:"disabled",creator_cloud_accounts:"not_enabled",examples:assets}),"application/json");
  }
  if(req.method==="GET"&&loc==="/robots.txt")return reply(res,200,"User-agent: *\nDisallow: /\n");
  if(req.method==="GET"&&loc==="/")return reply(res,200,landing,"text/html; charset=utf-8",{"content-security-policy":"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; form-action 'none'; base-uri 'none'; frame-ancestors 'none'"});
@@ -63,4 +64,4 @@ http.createServer(async (req,res)=>{
  if((req.method==="GET"||req.method==="HEAD")&&Object.hasOwn(DEMO,loc))return serveDemo(req,res,loc);
  if(req.method==="POST"&&loc==="/logout")return reply(res,303,"","text/plain",{"location":"/","set-cookie":COOKIE+"=; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=0"});
  return reply(res,404,"Not found");
-}).listen(PORT,"0.0.0.0",()=>console.log("Imagination Station guest server v37 ready"));
+}).listen(PORT,"0.0.0.0",()=>console.log("Imagination Station guest server v39 ready"));
