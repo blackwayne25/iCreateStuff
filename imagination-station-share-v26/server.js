@@ -4,8 +4,29 @@ const TOKEN=process.env.IMAGINATION_INVITE_KEY||"", SECRET=process.env.IMAGINATI
 if(TOKEN.length<40||SECRET.length<48){console.error("Missing share secret; refusing to start");process.exit(1);}
 const PORT=Number(process.env.PORT||10000), guest=fs.readFileSync(path.join(__dirname,"guest.html"),"utf8");
 const honeypotShare=fs.readFileSync(path.join(__dirname,"honeypot.html"),"utf8");
+const publicPlay=fs.readFileSync(path.join(__dirname,"play.html"),"utf8");
 const COOKIE="is_guest_v26", VALUE=crypto.createHmac("sha256",SECRET).update("session:"+TOKEN).digest("base64url");
 const HEAD={"cache-control":"private,no-store,max-age=0","x-content-type-options":"nosniff","x-frame-options":"DENY","strict-transport-security":"max-age=31536000","referrer-policy":"no-referrer","x-robots-tag":"noindex,nofollow","content-security-policy":"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' blob: data:; media-src 'self' blob:; connect-src 'self'; worker-src blob:; form-action 'none'; base-uri 'none'; frame-ancestors 'none'; object-src 'none'"};
+// Public guest preview CSP: no owner uploads or credentials. Remote script/model loading
+// is opt-in via the browser's "Load local AI" button.
+const PUBLIC_AI_CSP="default-src 'none'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://esm.run https://cdn.jsdelivr.net https://*.jsdelivr.net; style-src 'unsafe-inline'; img-src 'self' blob: data:; media-src 'self'; connect-src 'self' https://esm.run https://cdn.jsdelivr.net https://*.jsdelivr.net https://huggingface.co https://*.huggingface.co https://*.hf.co https://raw.githubusercontent.com https://*.xethub.hf.co https://*.mlc.ai https://mlc.ai; worker-src 'self' blob:; form-action 'none'; base-uri 'none'; frame-ancestors 'none'; object-src 'none'";
+const PUBLIC_AI_HEADERS={'content-security-policy':PUBLIC_AI_CSP};
+const GUEST_MUSIC=fs.readFileSync(path.join(__dirname,'studio-audio','4542.mp3'));
+function guestMusic(req,res){
+ const length=GUEST_MUSIC.length;let start=0,end=length-1,status=200;
+ if(req.headers.range){
+  const match=/^bytes=(\d*)-(\d*)$/.exec(String(req.headers.range).trim());
+  if(!match||(!match[1]&&!match[2]))return reply(res,416,'Invalid range','text/plain',{'content-range':`bytes */${length}`,'accept-ranges':'bytes'});
+  if(!match[1]){const suffix=Number(match[2]);if(!Number.isSafeInteger(suffix)||suffix<1)return reply(res,416,'Invalid range','text/plain',{'content-range':`bytes */${length}`});start=Math.max(0,length-suffix);}
+  else{start=Number(match[1]);end=match[2]?Number(match[2]):length-1;}
+  if(!Number.isSafeInteger(start)||!Number.isSafeInteger(end)||start>=length||end<start)return reply(res,416,'Invalid range','text/plain',{'content-range':`bytes */${length}`});
+  end=Math.min(end,length-1);status=206;
+ }
+ const headers={'accept-ranges':'bytes','content-length':end-start+1,'cache-control':'public, max-age=3600'};
+ if(status===206)headers['content-range']=`bytes ${start}-${end}/${length}`;
+ res.writeHead(status,{...HEAD,'content-type':'audio/mpeg',...headers});
+ if(req.method==='HEAD')res.end();else res.end(GUEST_MUSIC.subarray(start,end+1));
+}
 const landing="<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Imagination Station · Private Invitation</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;padding:18px;background:#091629;color:white;font:16px system-ui}main{max-width:480px;background:#182940;padding:28px;border-radius:22px;border:1px solid #548b96}h1{color:#94f6e4}p{line-height:1.5;color:#b7cadf}</style></head><body><main><h1>✦ Imagination Station</h1><p id=\"status\">This independent creator studio opens only with the invitation link from its creator.</p><p>One imagination. One studio.</p></main><script>(async()=>{const t=location.hash.slice(1),p=document.getElementById(\"status\");if(!t)return;history.replaceState(null,\"\",location.pathname);p.textContent=\"Opening your creator studio…\";try{const r=await fetch(\"/unlock\",{method:\"POST\",headers:{\"content-type\":\"text/plain\"},credentials:\"same-origin\",body:t});if(!r.ok){p.textContent=\"That invitation link is invalid or has been revoked. Ask your creator for a new one.\";return;}location.replace(\"/studio\");}catch(e){p.textContent=\"Could not connect. Check your connection and try the invitation again.\";}})();</script></body></html>";
 function reply(res,status,body,kind="text/plain; charset=utf-8",more={}){res.writeHead(status,{...HEAD,"content-type":kind,...more});res.end(body);}
 function eq(a,b){return a.length===b.length&&crypto.timingSafeEqual(Buffer.from(a),Buffer.from(b));}
@@ -48,7 +69,9 @@ http.createServer(async (req,res)=>{
    return reply(res,200,JSON.stringify({app:"imagination-station",version:"39",status:"ready",access:"invitation_session",ai_provider:"disabled",creator_cloud_accounts:"not_enabled",examples:assets}),"application/json");
  }
  if(req.method==="GET"&&loc==="/robots.txt")return reply(res,200,"User-agent: *\nDisallow: /\n");
- if(req.method==="GET"&&(loc==="/honeypot"||loc==="/honeypot/"))return reply(res,200,honeypotShare,"text/html; charset=utf-8");
+ if(req.method==="GET"&&(loc==="/honeypot"||loc==="/honeypot/"))return reply(res,200,honeypotShare,"text/html; charset=utf-8",PUBLIC_AI_HEADERS);
+ if(req.method==="GET"&&(loc==="/play"||loc==="/play/"))return reply(res,200,publicPlay,"text/html; charset=utf-8",PUBLIC_AI_HEADERS);
+ if((req.method==="GET"||req.method==="HEAD")&&loc==="/studio-audio/4542.mp3")return guestMusic(req,res);
  if(req.method==="GET"&&loc==="/")return reply(res,200,landing,"text/html; charset=utf-8",{"content-security-policy":"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; form-action 'none'; base-uri 'none'; frame-ancestors 'none'"});
  if(req.method==="POST"&&loc==="/unlock"){
    const origin=req.headers.origin;
